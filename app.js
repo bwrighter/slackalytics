@@ -6,12 +6,12 @@ var qs = require('querystring');
 
 //set up heroku environment variables
 var env_var = {
-	ga_key: process.env.GOOGLE_ANALYTICS_UA-73226465-2
+	ga_key: "UA-73226465-2"
 };
 
 //Server Details
 var app = express();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 0000;
 
 //Set Body Parser
 app.use(bodyParser.urlencoded({extended: true}));
@@ -64,7 +64,7 @@ app.post('/collect', function(req, res){
 	//Structure Data
 	var data = {
 		v: 		1,
-		tid: 	env_var.ga_key,
+		tid: 	"UA-73226465-2"
 		cid: 	user.id,
 		ds:  	"slack", //data source
 		cs: 	"slack", // campaign source
