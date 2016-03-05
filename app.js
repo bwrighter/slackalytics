@@ -6,12 +6,12 @@ var qs = require('querystring');
 
 //set up heroku environment variables
 var env_var = {
-	ga_key: "UA-73226465-2"
+	ga_key: process.env.GOOGLE_ANALYTICS_UAID
 };
 
 //Server Details
 var app = express();
-var port = process.env.PORT || 0000;
+var port = process.env.PORT || 3000;
 
 //Set Body Parser
 app.use(bodyParser.urlencoded({extended: true}));
